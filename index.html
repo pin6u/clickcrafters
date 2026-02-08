@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ClickCrafters | Performance Creative Agency</title>
+
+  <!-- SEO -->
+  <meta name="description" content="ClickCrafters helps local businesses grow with high-ROI Instagram Reels, ads, and brand systems." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ClickCrafters | Turn Content Into Customers" />
+  <meta property="og:description" content="High-performance Instagram marketing for gyms, clinics & local brands." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978" />
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- GSAP + Lenis (deferred) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+<style>
+:root{
+--bg:#050a15;--surface:#0b1224;--glass:rgba(255,255,255,.05);--border:rgba(255,255,255,.12);
+--green:#76c83d;--text:#f8fafc;--muted:#94a3b8}
+body.light{--bg:#f8fafc;--surface:#fff;--glass:rgba(0,0,0,.05);--border:rgba(0,0,0,.1);--text:#020617;--muted:#475569}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:.3s}
+a{text-decoration:none;color:inherit}
+img{width:100%;height:100%;object-fit:cover}
+.container{width:92%;max-width:1200px;margin:auto}
+
+/* Cursor Glow */
+.cursor{width:28px;height:28px;border-radius:50%;background:rgba(118,200,61,.25);position:fixed;pointer-events:none;mix-blend-mode:screen;filter:blur(14px);z-index:999}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid var(--border)}
+.logo{font-weight:900}
+.nav-links{display:flex;gap:18px;font-size:.9rem}
+.toggle{cursor:pointer}
+
+.hero{padding:140px 0 100px}
+.hero h1{font-size:clamp(2.8rem,6vw,5rem);line-height:1.05;letter-spacing:-2px}
+.hero span{color:var(--green)}
+.hero p{max-width:520px;color:var(--muted);margin:20px 0 30px}
+
+.btn{padding:16px 28px;border-radius:100px;font-weight:700;display:inline-flex;gap:10px;align-items:center}
+.btn.primary{background:var(--green);color:#000}
+.btn.secondary{border:1px solid var(--border)}
+
+section{padding:100px 0}
+h2{font-size:2.4rem;margin-bottom:40px;letter-spacing:-1px}
+
+.services,.work-grid,.metrics{display:grid;gap:24px}
+.services{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.work-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.metrics{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+
+.card,.metric{background:var(--glass);border:1px solid var(--border);border-radius:26px;padding:36px;transition:.4s}
+.card:hover{transform:translateY(-8px);border-color:var(--green)}
+
+.work{position:relative;aspect-ratio:4/5;border-radius:22px;overflow:hidden}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.65);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;opacity:0;transition:.4s}
+.work:hover .overlay{opacity:1}
+.overlay span{color:var(--green);font-size:.75rem;text-transform:uppercase}
+
+form{max-width:520px;margin:auto;display:grid;gap:16px}
+input,textarea{padding:14px;border-radius:12px;border:1px solid var(--border);background:var(--glass);color:var(--text)}
+textarea{height:120px;resize:none}
+
+footer{padding:120px 0;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="cursor"></div>
+<div class="container">
+
+<nav>
+  <div class="logo">CLICKCRAFTERS</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#work">Case Studies</a>
+    <a href="#contact">Contact</a>
+    <span class="toggle" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></span>
+  </div>
+</nav>
+
+<section class="hero section">
+  <h1>We Turn Content<br><span>Into Customers</span></h1>
+  <p>High-performance Instagram Reels & ads for local businesses that want real ROI.</p>
+  <a href="#contact" class="btn primary magnetic">Get Free Growth Plan</a>
+</section>
+
+<section id="about" class="section">
+  <h2>About ClickCrafters</h2>
+  <p style="max-width:720px;color:var(--muted)">We eliminate vanity metrics. Every reel, ad, and strategy is engineered to generate leads, bookings, and revenue.</p>
+</section>
+
+<section class="section">
+  <h2>Services</h2>
+  <div class="services">
+    <div class="card">Instagram Reels</div>
+    <div class="card">Paid Ads</div>
+    <div class="card">Brand Identity</div>
+  </div>
+</section>
+
+<section id="work" class="section">
+  <h2>Case Studies</h2>
+
+  <h3>Empire Gym</h3>
+  <div class="metrics">
+    <div class="metric">Views: 400 → 120K</div>
+    <div class="metric">Leads: +214%</div>
+    <div class="metric">Bookings: +68%</div>
+  </div>
+  <div class="work-grid">
+    <div class="work"><img loading="lazy" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b"><div class="overlay"><span>Reel</span><strong>Workout Hook</strong></div></div>
+    <div class="work"><img loading="lazy" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e"><div class="overlay"><span>Reel</span><strong>Transformation</strong></div></div>
+  </div>
+
+  <h3 style="margin-top:80px">Apex Dental</h3>
+  <div class="metrics">
+    <div class="metric">Reach: +180%</div>
+    <div class="metric">Appointments: +92%</div>
+    <div class="metric">CPL: −41%</div>
+  </div>
+
+  <h3 style="margin-top:80px">Skyline Homes</h3>
+  <div class="metrics">
+    <div class="metric">Leads: 3×</div>
+    <div class="metric">DM Inquiries: +240%</div>
+    <div class="metric">Ad ROAS: 4.2x</div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Get a Free Strategy</h2>
+  <!-- Formspree + Zapier/Make webhook ready -->
+  <form action="https://formspree.io/f/yourformid" method="POST">
+    <input name="name" placeholder="Your Name" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Tell us about your business"></textarea>
+
+    <!-- Auto-reply email -->
+    <input type="hidden" name="_replyto" value="auto">
+    <input type="hidden" name="_subject" value="Your Growth Plan | ClickCrafters">
+
+    <button class="btn primary">Submit</button>
+  </form>
+
+  <p style="margin-top:20px;color:var(--muted);font-size:.9rem">You’ll receive a strategy email within 24 hours.</p>
+</section>
+
+<footer>
+  <p>© 2026 ClickCrafters</p>
+  <p>@clickcrafters_marketing</p>
+</footer>
+</div>
+
+<script defer>
+/* Smooth Scroll */
+const lenis=new Lenis({smooth:true});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);
+
+/* GSAP Animations */
+gsap.registerPlugin(ScrollTrigger);
+gsap.from('.hero h1',{y:60,opacity:0,duration:1,ease:'power3.out'});
+gsap.utils.toArray('.section').forEach(sec=>{gsap.from(sec,{scrollTrigger:{trigger:sec,start:'top 80%'},opacity:0,y:40,duration:.8})});
+
+/* Cursor Glow */
+const cursor=document.querySelector('.cursor');window.addEventListener('mousemove',e=>{cursor.style.transform=`translate(${e.clientX}px,${e.clientY}px)`})
+
+/* Magnetic Button */
+document.querySelectorAll('.magnetic').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)/6}px,${(e.clientY-r.top-r.height/2)/6}px)`});btn.addEventListener('mouseleave',()=>btn.style.transform='translate(0,0)')})
+
+function toggleTheme(){document.body.classList.toggle('light')}
+</script>
+</body>
+</html>
